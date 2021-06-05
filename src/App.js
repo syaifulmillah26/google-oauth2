@@ -8,6 +8,7 @@ import Lottie from "react-lottie"
 import * as legoData from "./legoLoading.json"
 import * as doneData from "./doneLoading.json"
 import * as errorData from "./errorLoading.json"
+import QRCode from 'qrcode.react'
 
 
 const defaultOptions = {
@@ -106,7 +107,7 @@ export default class App extends Component {
                   callback={this.responseFacebook}
                 />
               </div>
-              <div className='google d-flex align-items-center justify-content-center'>
+              <div className='google d-flex align-items-center justify-content-center mb-5'>
                 <GoogleLogin
                   clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
                   buttonText='Login with Google'
@@ -115,7 +116,15 @@ export default class App extends Component {
                   cookiePolicy={'single_host_origin'}
                 />
               </div>
-
+              <div className='google d-flex align-items-center justify-content-center mt-5'>
+                <QRCode
+                  id="123456"
+                  value="123456"
+                  size={290}
+                  level={"H"}
+                  includeMargin={true}
+                />
+              </div>
             </div>
           ) : (
               <div className="d-flex align-items-center justify-content-center ">
